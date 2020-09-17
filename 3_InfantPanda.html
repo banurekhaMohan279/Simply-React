@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--Here is a simple React class Component with Babel -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Infant Panda</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+
+    <h1 id="root"></h1>
+
+    <script type="text/babel">
+      class InfantPanda extends React.Component{
+        constructor(props){
+          super(props);
+          this.state={clicked:false};
+          this.toggleButton=this.toggleButton.bind(this);
+        }
+
+        toggleButton(){
+          this.setState(state=>({clicked:!this.state.clicked}));
+        }
+
+        render(){
+          return(
+            <div>
+              <h1>Click Me!</h1>
+              <img src = {this.state.clicked? 'img/newborn_panda.jpg':'img/infant_panda.jpg'}
+              onClick={this.toggleButton}
+              />
+            </div>
+          )
+        }
+      }
+      ReactDOM.render(
+        <InfantPanda/>,
+        document.getElementById('root')
+      );
+    </script>
+
+  </body>
+</html>

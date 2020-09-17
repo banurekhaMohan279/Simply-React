@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!--Here is a simple React Component without Babel -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Newborn Panda</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  </head>
+  <body>
+    <h1 id="root"></h1>
+
+    <script type="text/javascript">
+      const element= React.createElement;
+
+      ReactDOM.render(
+        element('img',{src:'img/newborn_panda.jpg'}),
+        document.getElementById('root')
+        );
+    </script>
+  </body>
+</html>
